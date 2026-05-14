@@ -6,3 +6,15 @@ Fri May  8 10:07:21 PM UTC 2026:
  tests:  0|6
 ========================================
 36e8bf5
+Thu May 14 08:52:28 PM UTC 2026: 
+ graph.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:51:18: error: implicit declaration of function ‘mapsearch’; did you mean ‘map_search’? [-Wimplicit-function-declaration]
+   51 |     MapPair *k = mapsearch(g->adjacencyMap, (void*) label1);
+      |                  ^~~~~~~~~
+      |                  map_search
+graph.c:51:18: error: initialization of ‘MapPair *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+b6c8e4c
