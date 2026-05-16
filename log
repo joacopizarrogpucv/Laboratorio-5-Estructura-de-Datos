@@ -255,3 +255,16 @@ list.h:20:35: note: expected ‘void *’ but argument is of type ‘Edge’
    20 | void list_pushBack(List *L, void *dato);
       |                             ~~~~~~^~~~
 2012f77
+Sat May 16 11:05:11 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:53:5: error: conversion to non-scalar type requested
+   53 |     Edge * arista = (Edge)malloc(sizeof(Edge*));
+      |     ^~~~
+graph.c:56:22: error: request for member ‘value’ in something not a structure or union
+   56 |     list_pushBack(src->value, arista);
+      |                      ^~
+f423825
