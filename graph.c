@@ -88,8 +88,14 @@ List* getAdjacentLabels(Graph* g, const char* label) {
     MapPair* pair = map_search(g->adjacencyMap, (void*)label);
     if (pair == NULL) return NULL;
 
-    List* lista = pair->value;
+    Edge *aux = list_first(pair->value);
     List * nueva_lista = list_create();
+
+    while(aux != NULL){
+        char nombre = aux->target;
+        list_pushBack(nueva_lista, nombre);
+        aux = list_next(pair->value);
+    }
     
     return nueva_lista; 
 }
