@@ -348,3 +348,24 @@ graph.c:54:22: note: destination object of size [0, 9223372036854775805] allocat
       |                      ^~~~~~~~~~~~~~~~~~~~
 cc1: all warnings being treated as errors
 891e7d6
+Sat May 16 11:08:36 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+In function ‘addEdge’,
+    inlined from ‘addEdge’ at graph.c:47:6:
+graph.c:54:20: error: array subscript ‘Edge[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds=]
+   54 |     arista->target = malloc(strlen(dest)+1);
+      |     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+graph.c:53:27: note: object of size 8 allocated by ‘malloc’
+   53 |     Edge* arista = (Edge*)malloc(sizeof(Edge*));
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+graph.c:56:20: error: array subscript ‘Edge[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds=]
+   56 |     arista->weight = weight;
+      |     ~~~~~~~~~~~~~~~^~~~~~~~
+graph.c:53:27: note: object of size 8 allocated by ‘malloc’
+   53 |     Edge* arista = (Edge*)malloc(sizeof(Edge*));
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+78600b2
