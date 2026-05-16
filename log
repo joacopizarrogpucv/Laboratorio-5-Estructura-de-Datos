@@ -74,3 +74,16 @@ map.h:18:33: note: expected ‘void *’ but argument is of type ‘const char *
       |                           ~~~~~~^~~
 cc1: all warnings being treated as errors
 cd62326
+Sat May 16 10:34:28 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:38:33: error: passing argument 2 of ‘map_insert’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   38 |     map_insert(g->adjacencyMap, label, lista);
+      |                                 ^~~~~
+In file included from graph.c:8:
+map.h:18:33: note: expected ‘void *’ but argument is of type ‘const char *’
+   18 | void map_insert(Map *map, void *key, void *value);
+      |                           ~~~~~~^~~
+cc1: all warnings being treated as errors
+98e0471
