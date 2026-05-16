@@ -53,7 +53,7 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     Edge arista = (Edge)malloc(sizeof(Edge));
     strcpy(arista->target, dest);
     arista->weight = weight;
-    list_pushBack(src->value, (void*)arista);
+    list_pushBack(src->value, arista);
 }
 
 List* getEdges(Graph* g, const char* label) {
