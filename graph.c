@@ -92,8 +92,8 @@ List* getAdjacentLabels(Graph* g, const char* label) {
     List * nueva_lista = list_create();
 
     while(aux != NULL){
-        char nombre = aux->target;
-        list_pushBack(nueva_lista, nombre);
+        char* nombre = aux->target;
+        list_pushBack(nueva_lista, (void*)nombre);
         aux = list_next(pair->value);
     }
     

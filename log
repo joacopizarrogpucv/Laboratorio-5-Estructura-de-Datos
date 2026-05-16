@@ -446,3 +446,9 @@ list.h:20:35: note: expected ‘void *’ but argument is of type ‘char’
    20 | void list_pushBack(List *L, void *dato);
       |                             ~~~~~~^~~~
 3967da5
+Sat May 16 11:25:05 PM UTC 2026: 
+ graph.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  12|0
+========================================
+e00b019
