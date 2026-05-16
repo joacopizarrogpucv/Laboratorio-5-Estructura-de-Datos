@@ -48,7 +48,7 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     if (!g || !src || !dest) return;
     MapPair * pair = map_search(g->adjacencyMap, (void*)src);
 
-    if (pair != NULL) return;
+    if (pair == NULL) return;
 
     Edge arista = (Edge)malloc(sizeof(Edge));
     strcpy(arista->target, dest);
