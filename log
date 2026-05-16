@@ -40,3 +40,17 @@ Sat May 16 07:09:37 PM UTC 2026:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 87c67e2
+Sat May 16 07:10:29 PM UTC 2026: 
+ graph.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:31:23: error: too few arguments to function ‘map_create’
+   31 |     g->adjacencyMap = map_create();
+      |                       ^~~~~~~~~~
+In file included from graph.c:8:
+map.h:14:6: note: declared here
+   14 | Map *map_create(int (*is_equal)(void *key1, void *key2)); // unsorted map
+      |      ^~~~~~~~~~
+ecf849c
