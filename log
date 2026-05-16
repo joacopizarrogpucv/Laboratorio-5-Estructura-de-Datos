@@ -299,3 +299,22 @@ graph.c:53:27: note: object of size 8 allocated by ‘malloc’
       |                           ^~~~~~~~~~~~~~~~~~~~~
 cc1: all warnings being treated as errors
 19c23a1
+Sat May 16 11:07:36 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+In function ‘addEdge’,
+    inlined from ‘addEdge’ at graph.c:47:6:
+graph.c:54:5: error: array subscript ‘Edge[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds=]
+   54 |     strcpy(arista->target, dest);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+graph.c:53:27: note: object of size 8 allocated by ‘malloc’
+   53 |     Edge* arista = (Edge*)malloc(sizeof(Edge*));
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+graph.c:55:20: error: array subscript ‘Edge[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds=]
+   55 |     arista->weight = weight;
+      |     ~~~~~~~~~~~~~~~^~~~~~~~
+graph.c:53:27: note: object of size 8 allocated by ‘malloc’
+   53 |     Edge* arista = (Edge*)malloc(sizeof(Edge*));
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+c78bd49
