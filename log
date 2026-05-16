@@ -97,3 +97,18 @@ graph.c:37:24: error: invalid use of incomplete typedef ‘Map’
    37 |     if (g->adjacencyMap->label != NULL) return;
       |                        ^~
 789948b
+Sat May 16 10:49:48 PM UTC 2026: 
+ graph.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:37:50: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   37 |     MapPair * pair = map_search(g->adjacencyMap, label);
+      |                                                  ^~~~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+cc1: all warnings being treated as errors
+d457174
