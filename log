@@ -318,3 +318,33 @@ graph.c:53:27: note: object of size 8 allocated by ‘malloc’
       |                           ^~~~~~~~~~~~~~~~~~~~~
 cc1: all warnings being treated as errors
 c78bd49
+Sat May 16 11:08:25 PM UTC 2026: 
+ graph.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:5:
+In function ‘addEdge’,
+    inlined from ‘addEdge’ at graph.c:47:6:
+graph.c:54:20: error: array subscript ‘Edge[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds=]
+   54 |     arista->target = malloc(strlen(dest));
+      |     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+graph.c:53:27: note: object of size 8 allocated by ‘malloc’
+   53 |     Edge* arista = (Edge*)malloc(sizeof(Edge*));
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+graph.c:56:20: error: array subscript ‘Edge[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds=]
+   56 |     arista->weight = weight;
+      |     ~~~~~~~~~~~~~~~^~~~~~~~
+graph.c:53:27: note: object of size 8 allocated by ‘malloc’
+   53 |     Edge* arista = (Edge*)malloc(sizeof(Edge*));
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+graph.c: In function ‘addEdge’:
+graph.c:55:5: error: ‘__builtin___strcpy_chk’ writing one too many bytes into a region of a size that depends on ‘strlen’ [-Werror=stringop-overflow=]
+   55 |     strcpy(arista->target, dest);
+      |     ^
+In function ‘addEdge’,
+    inlined from ‘addEdge’ at graph.c:47:6:
+graph.c:54:22: note: destination object of size [0, 9223372036854775805] allocated by ‘malloc’
+   54 |     arista->target = malloc(strlen(dest));
+      |                      ^~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+891e7d6
