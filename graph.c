@@ -34,14 +34,14 @@ Graph* createGraph() {
 
 void addNode(Graph* g, const char* label) {
     if (!g || !label) return;
-    MapPair * pair = map_search(g->adjacencyMap, label);
+    MapPair * pair = map_search(g->adjacencyMap, (void*)label);
 
     if (pair != NULL) return;
     
     char * copia_label = strdup(label);
     List* nueva_lista = list_create();
     
-    map_insert(g->adjacencyMap, copia_label, nueva_lista);
+    map_insert(g->adjacencyMap, (void*)copia_label, nueva_lista);
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
