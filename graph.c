@@ -27,8 +27,8 @@ int is_equal_string(void *key1, void *key2) {
  * ========================================= */
 
 Graph* createGraph() {
-    Graph* grafo = (Graph*)malloc(sizeof(Graph));
-    return grafo;
+    //Graph* grafo = (Graph*)malloc(sizeof(Graph));
+    return NULL;
 }
 
 void addNode(Graph* g, const char* label) {
