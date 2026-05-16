@@ -69,12 +69,12 @@ List* getEdges(Graph* g, const char* label) {
 
 int getWeight(Graph* g, const char* label1, const char* label2) {
     if (!g || !label1 || !label2) return -1;
-    MapPair *k = map_search(g->adjacencyMap, (void*) label1);
-    if(k == NULL) return -1;
+    MapPair *pair = map_search(g->adjacencyMap, (void*) label1);
+    if(pair == NULL) return -1;
     Edge *aux = list_first(k->value);
     while(aux != NULL){
         if(strcmp(label2, aux->target)==0) return aux->weight;
-        aux = list_next(k->value);
+        aux = list_next(pair->value);
     }
     
     
@@ -87,7 +87,7 @@ List* getAdjacentLabels(Graph* g, const char* label) {
     if (!g || !label) return NULL;
     
     
-    return; 
+    return NULL; 
 }
 
 void destroyGraph(Graph* g) {
