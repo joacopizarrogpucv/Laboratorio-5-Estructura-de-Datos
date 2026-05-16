@@ -385,3 +385,16 @@ Sat May 16 11:13:09 PM UTC 2026:
  tests:  12|0
 ========================================
 2546767
+Sat May 16 11:18:38 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:90:5: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+   90 |     return;
+      |     ^~~~~~
+graph.c:86:7: note: declared here
+   86 | List* getAdjacentLabels(Graph* g, const char* label) {
+      |       ^~~~~~~~~~~~~~~~~
+072bf1f
