@@ -34,11 +34,11 @@ Graph* createGraph() {
 
 void addNode(Graph* g, const char* label) {
     if (!g || !label) return;
-    MapPair * pair = map_search(g->adjacencyMap, (void*)label);
+    MapPair* pair = map_search(g->adjacencyMap, (void*)label);
 
     if (pair != NULL) return;
     
-    char * copia_label = strdup(label);
+    char* copia_label = strdup(label);
     List* nueva_lista = list_create();
     
     map_insert(g->adjacencyMap, (void*)copia_label, nueva_lista);
@@ -46,11 +46,11 @@ void addNode(Graph* g, const char* label) {
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     if (!g || !src || !dest) return;
-    MapPair * pair = map_search(g->adjacencyMap, (void*)src);
+    MapPair* pair = map_search(g->adjacencyMap, (void*)src);
 
     if (pair == NULL) return;
 
-    Edge * arista = (Edge)malloc(sizeof(Edge*));
+    Edge* arista = (Edge*)malloc(sizeof(Edge*));
     strcpy(arista->target, dest);
     arista->weight = weight;
     list_pushBack(src->value, arista);
