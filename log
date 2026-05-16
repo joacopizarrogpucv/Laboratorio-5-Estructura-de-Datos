@@ -87,3 +87,13 @@ map.h:18:33: note: expected ‘void *’ but argument is of type ‘const char *
       |                           ~~~~~~^~~
 cc1: all warnings being treated as errors
 98e0471
+Sat May 16 10:44:59 PM UTC 2026: 
+ graph.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:37:24: error: invalid use of incomplete typedef ‘Map’
+   37 |     if (g->adjacencyMap->label != NULL) return;
+      |                        ^~
+789948b
